@@ -25,11 +25,11 @@
 
                      <div class="col-md-5 center-item">
                         <div class="input-group number-spinner">
-                           <button  class="btn btn-default"><i class="fas fa-minus"></i></button>
+                           <button id="addWithdraw"  class="btn btn-default"><i class="fas fa-minus"></i></button>
                            <input id="depositAmount"  type="text" class="form-control text-center" value="1">
-                           <button id="addDeposit" class="btn btn-default"><i class="fas fa-plus"></i></button>
+                           <button id="addDeposit"  class="btn btn-default"><i class="fas fa-plus"></i></button>
                         </div>
-                        <h5>$<span id="currentDeposit">1219</span></h5>
+                        <h5>$<span id="currentDeposit">1230</span></h5>
                         <img src="images/remove.png" alt="" class="remove-item">
                      </div>
                   </div>
@@ -44,7 +44,7 @@
                      <div class="col-md-5 center-item">
                         <div class="input-group number-spinner">
                            <button class="btn btn-default"><i class="fas fa-minus"></i></button>
-                           <input type="text" class="form-control text-center" value="1">
+                           <input type="text" class="form-control text-center" value="126">
                            <button class="btn btn-default"><i class="fas fa-plus"></i></button>
 
                         </div>
@@ -76,13 +76,33 @@
             </div>
          </div>
       </div>
-   </section>
 
- <section>
-      const depositBtn = document.getElementById("addDeposit");
-      depositBtn.addEventListener("click", function(){
-         const depositAmount = document.getElementById("depositAmount");
-      })
- </section>
+      <script>
+         const depositBtn = document.getElementById("addDeposit");
+         depositBtn.addEventListener("click",function(){
+            const depositAmount = document.getElementById("depositAmount").value;
+            const depositNumber = parseFloat(depositAmount);
+
+
+
+            const currentDeposit = document.getElementById("currentDeposit").innerText;
+            const currentDepositNumber = parseFloat(currentDeposit);
+            const totalDeposit = depositNumber * currentDepositNumber;
+           // console.log(totalDeposit);//
+
+           document.getElementById("currentDeposit").innerText = totalDeposit;
+
+           
+         
+         })
+         
+
+         
+
+      </script>
+
+   
+
+ 
 </body>
 </html>
