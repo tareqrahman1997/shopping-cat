@@ -8,6 +8,7 @@
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" rel="stylesheet" />
    <link href="style.css" rel="stylesheet">
+   <script src="index.js"></script>
 </head>
 
 <body>
@@ -29,7 +30,7 @@
                            <input id="depositAmount"  type="text" class="form-control text-center" value="1">
                            <button id="addDeposit"  class="btn btn-default"><i class="fas fa-plus"></i></button>
                         </div>
-                        <h5>$<span id="currentDeposit">1230</span></h5>
+                        <h5>$<span id="currentDeposit">1200</span></h5>
                         <img src="images/remove.png" alt="" class="remove-item">
                      </div>
                   </div>
@@ -92,16 +93,23 @@
 
            document.getElementById("currentDeposit").innerText = totalDeposit;
 
+           //withdraw btn//
+           const withdrawBtn = document.getElementById("addWithdraw");
+           withdrawBtn.addEventListener("click",function(){
+            const depositAmount = document.getElementById("depositAmount").value;
+
+
+            const currentDeposit = document.getElementById("currentDeposit").innerText;
+            const totalDeposit =currentDepositNumber - depositNumber;
+            
+            document.getElementById("currentDeposit").innerText = totalDeposit;
+              
+           })
+
            
          
          })
-         
-
-         
-
       </script>
-
-   
 
  
 </body>
